@@ -37,6 +37,10 @@ const server= http.createServer((req,res)=>{
         res.writeHead(200,{'Content-Type':'text/css'});
         res.end(fs.readFileSync('../client/style.css'));
     }
+    else if(parsed_url.pathname==='/addUser.html'){
+        res.writeHead(200,{'Content-Type':'text/html'});
+        res.end(fs.readFileSync('../client/addUser.html'));
+    }   
    
     else if(parsed_url.pathname==='/submit'&& req.method==='POST'){
         console.log("reached");
